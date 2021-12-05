@@ -12,4 +12,10 @@ for f in $(find . -type f ! -path "./.git/*" ! -name bootstrap.sh); do
 
 done
 
+if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
+    echo "Downloading vim-plug"
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
 echo "Done"
