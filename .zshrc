@@ -17,4 +17,3 @@ zstyle :compinstall filename '/home/joseph/.zshrc'
 
 autoload -Uz compinit
 compinit
-
