@@ -17,6 +17,12 @@ git
 ./bootstrap.sh # Copies your dotfiles
 ```
 
+If your new computer isn't running Arch Linux (shame on you) ignore the `install.sh` script and rather manually install the following required packages:
+
+```sh
+zsh
+```
+
 ## Post Setup
 
 ```sh
@@ -26,5 +32,5 @@ chsh -s /bin/zsh # Sets zsh as your default shell
 From a vim session:
 
 ```sh
-:PlugInstall # Installs your previous vim plugins
+:PlugInstall # Installs your precious vim plugins
 ```
