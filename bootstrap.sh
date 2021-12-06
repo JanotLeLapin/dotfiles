@@ -8,6 +8,11 @@ fi
 
 for f in $(find . -type f ! -path "./.git/*" ! -name "*.sh" ! -name "*.md" ! -name ".gitignore" ! -name ".editorconfig"); do
     echo "Copying ${f:2}"
+
+    d="${$(dirname $f):2}"
+    if [[ d != "" ]]; then
+        mkdir -p "$HOME/$d"
+    fi
     cp $f "$HOME/${f:2}"
 
 done
