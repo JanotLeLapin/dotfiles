@@ -1,4 +1,4 @@
-PS1="%F{cyan}%n%f: %F{cyan}%~%f> "
+PS1="%F{cyan}%~%f %B>>>%b "
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
