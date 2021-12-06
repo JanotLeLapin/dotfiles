@@ -6,7 +6,7 @@ if [[ $yn != 'Y' ]]; then
     exit
 fi
 
-for f in $(find . -type f ! -path "./.git/*" ! -name "*.sh" ! -name "*.md" ! -name ".gitignore"); do
+for f in $(find . -type f ! -path "./.git/*" ! -name "*.sh" ! -name "*.md" ! -name ".gitignore" ! -name ".editorconfig"); do
     echo "Copying ${f:2}"
     cp $f "$HOME/${f:2}"
 
