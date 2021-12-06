@@ -6,14 +6,18 @@ if [[ $yn != 'Y' ]]; then
     exit
 fi
 
-for f in $(find . -type f ! -path "./.git/*" ! -name "*.sh" ! -name "*.md" ! -name ".gitignore" ! -name ".editorconfig"); do
+for f in $(find . -type f ! -path "./.git/*" ! -name "bootstrap.sh" ! -name "install.sh" ! -name "*.md" ! -name ".gitignore" ! -name ".editorconfig"); do
     echo "Copying ${f:2}"
 
     d="${$(dirname $f):2}"
     if [[ d != "" ]]; then
         mkdir -p "$HOME/$d"
     fi
-    cp $f "$HOME/${f:2}"
+    fname="$HOME/${f:2}"
+    cp $f "$fname"
+    if [[ "$fname" == *.sh ]]; then
+        chmod +x "$fname"
+    fi
 
 done
 
