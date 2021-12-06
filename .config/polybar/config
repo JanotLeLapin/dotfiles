@@ -1,39 +1,61 @@
+[colors]
+background = #1e293b
+background-alt = #1e293b
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #38bdf8
+
 [bar/i3bar]
 monitor = ${env:MONITOR:}
-
 width = 100%
-height = 38
-radius = 0
+height = 32
+offset-x = 1%
+offset-y = 1%
+radius = 4
 fixed-center = true
 
-background = #1d1a23
-foreground = #c5c8c9
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 3
-line-color =
+line-color = #f00
 
-border-size = 0
-border-color =
+border-size = 4
+border-color = #00000000
 
-padding-left = 2
+padding-left = 0
 padding-right = 2
 
-module-margin-left = 2
+module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "JetBrains Mono Semibold:size=12;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=12;1"
-font-2 = "Font Awesome 5 Brands:size=12;1"
+font-0 = Roboto Semibold:pixelsize=11;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
 
-modules-left =
+modules-left = i3
 modules-center = date
-modules-right = wlan eth powermenu
+modules-right = memory cpu wlan eth battery temperature powermenu
 
+;tray-background = #0063ff
+
+;wm-restack = bspwm
 ;wm-restack = i3
+
 ;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
@@ -41,28 +63,52 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 2
-label-mode-foreground = #1e1e20
-label-mode-background = #60577a
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
 
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #372c59
-label-focused-foreground = #4f4375
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
+; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-background = #60577a
-label-unfocused-foreground = #1e1e20
 label-unfocused-padding = 2
 
+; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = #60577a
-label-visible-foreground = #1e1e20
-label-visible-padding = 2
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
 
+; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = #4822b9
+label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.primary}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.primary}
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -70,33 +116,37 @@ interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #857e9a
-format-connected-background = #1e1e20
-format-connected-padding = 2
+format-connected-underline = ${colors.primary}
 label-connected = %essid%
 
 format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = #1e1e20
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = enp7s0
 interval = 3.0
 
-format-connected-padding = 2
-format-connected-foreground = #857e9a
-format-connected-background = #1e1e20
-format-connected-prefix = " "
-format-connected-prefix-foreground = #857e9a
+format-connected-underline = ${colors.primary}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -107,12 +157,61 @@ date-alt = " %d/%m/%Y"
 time = %H:%M:%S
 time-alt = %H:%M
 
-format-prefix = 
-format-foreground = #c5c8c9
-format-background = #1d1a23
-format-padding = 2
+format-underline = ${colors.primary}
 
 label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.primary}
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${colors.primary}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = ${colors.primary}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -121,38 +220,38 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
-label-open-foreground = #60577a
-label-close =  cancel
-label-close-foreground = #60577a
+label-open = 
+label-open-foreground = ${colors.primary}
+label-close =  cancel
+label-close-foreground = ${colors.primary}
 label-separator = |
-label-separator-foreground = #857e9a
+label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = reboot
+menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
-menu-2-0-exec = poweroff
+menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-menu-3-0 = log off
-menu-3-0-exec = i3 exit logout
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
-
 [settings]
 screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
