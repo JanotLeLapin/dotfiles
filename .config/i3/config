@@ -225,12 +225,11 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
