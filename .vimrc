@@ -13,6 +13,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 
 Plug 'joshdick/onedark.vim'
+Plug 'hallzy/lightline-onedark'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -34,3 +36,13 @@ let NERDTreeIgnore=['\.git$', '\.node_modules$']
 
 colorscheme onedark
 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
