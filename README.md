@@ -12,15 +12,27 @@ git
 
 ## Setup
 
+Install the following packages:
+
 ```sh
-./install.sh   # Installs required packages
-./bootstrap.sh # Copies your dotfiles
+git
+curl
+
+picom-git
+polybar
+rofi
+redshift-git
+vim
+zsh
+
+# Arch only
+base-devel
 ```
 
-If your new computer isn't running Arch Linux (shame on you) ignore the `install.sh` script and rather manually install the following required packages:
+Then run the following command:
 
 ```sh
-zsh
+./bootstrap.sh # Copies your dotfiles
 ```
 
 ## Post Setup
