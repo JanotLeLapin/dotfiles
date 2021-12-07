@@ -17,5 +17,3 @@ zstyle :compinstall filename '/home/joseph/.zshrc'
 
 autoload -Uz compinit
 compinit
-
-picom-trans -c 75

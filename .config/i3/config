@@ -1,13 +1,9 @@
 set $mod Mod4
 
-new_window pixel 1
-new_float normal
+default_border none
+default_floating_border none
 
 hide_edge_borders none
-
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
 
 # screenshot util
 bindsym --release Shift+Print exec "~/.scripts/screenshot.sh -s"
@@ -295,4 +291,3 @@ bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 exec firefox
-

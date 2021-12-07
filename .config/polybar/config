@@ -1,14 +1,14 @@
 [colors]
 background = #1e293b
 background-alt = #1e293b
-foreground = #dfdfdf
-foreground-alt = #555
+foreground = #f1f5f9
+foreground-alt = #94a3b8
 primary = #38bdf8
 
 [bar/i3bar]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 32
+height = 38
 offset-x = 1%
 offset-y = 1%
 radius = 4
@@ -99,7 +99,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+# format-underline = ${colors.primary}
 label = %percentage:2%%
 
 [module/memory]
@@ -107,7 +107,7 @@ type = internal/memory
 interval = 2
 format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+# format-underline = ${colors.primary}
 label = %percentage_used%%
 
 [module/wlan]
@@ -137,7 +137,7 @@ type = internal/network
 interface = enp7s0
 interval = 3.0
 
-format-connected-underline = ${colors.primary}
+# format-connected-underline = ${colors.primary}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -200,7 +200,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.primary}
+# format-underline = ${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -218,6 +218,7 @@ type = custom/menu
 
 expand-right = true
 
+format-underline = ${colors.primary}
 format-spacing = 2
 
 label-open = Power
