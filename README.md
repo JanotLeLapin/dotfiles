@@ -22,6 +22,7 @@ picom-git
 polybar
 rofi
 redshift-git
+alacritty
 vim
 zsh
 
