@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmsvg/pear-tree'
 
+Plug 'joshdick/onedark.vim'
+
 call plug#end()
 
 let g:pear_tree_pairs = {
@@ -20,3 +22,6 @@ let g:pear_tree_pairs = {
     \ '"': {'closer': '"'},
     \ '`': {'closer': '`'}
     \ }
+
+colorscheme onedark
+
