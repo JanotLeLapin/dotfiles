@@ -6,8 +6,8 @@ default_floating_border none
 hide_edge_borders none
 
 # screenshot util
-bindsym --release Shift+Print exec "~/.scripts/screenshot.sh -s"
-bindsym --release Print exec "~/.scripts/screenshot.sh"
+bindsym --release Shift+Print exec flameshot gui
+bindsym --release Print       exec flameshot full
 
 font xft:URWGothic-Book 11
 

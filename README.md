@@ -25,6 +25,7 @@ redshift-git
 alacritty
 vim
 zsh
+flameshot # Screenshots
 
 # Arch only
 base-devel
