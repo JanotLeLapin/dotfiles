@@ -11,6 +11,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'joshdick/onedark.vim'
 Plug 'hallzy/lightline-onedark'
@@ -33,6 +34,8 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$', '\.node_modules$']
+
+let g:ctrlp_show_hidden=1
 
 colorscheme onedark
 
