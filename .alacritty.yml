@@ -55,7 +55,7 @@ font:
     normal:
         family: JetBrains Mono
 
-    size: 12
+    size: 11
 
 key_bindings:
     - { key: Up,   mods: Alt, action: IncreaseFontSize }
