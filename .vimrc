@@ -15,10 +15,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'joshdick/onedark.vim'
 Plug 'hallzy/lightline-onedark'
 Plug 'itchyny/lightline.vim'
+
 
 call plug#end()
 
