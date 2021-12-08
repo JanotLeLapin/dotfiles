@@ -27,6 +27,10 @@ vim
 zsh
 flameshot # Screenshots
 
+ttf-roboto
+ttf-jetbrains-mono
+ttf-font-awesome
+
 # Arch only
 base-devel
 ```
