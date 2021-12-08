@@ -5,6 +5,8 @@ syntax on
 
 filetype indent on
 
+set laststatus=2
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
@@ -30,8 +32,6 @@ let g:pear_tree_pairs = {
     \ }
 
 nnoremap <C-f> :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$', '\.node_modules$']
 
