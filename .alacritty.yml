@@ -60,3 +60,5 @@ font:
 key_bindings:
     - { key: Up,   mods: Alt, action: IncreaseFontSize }
     - { key: Down, mods: Alt, action: DecreaseFontSize }
+    - { key: Up,   mods: Control, action: ScrollPageUp }
+    - { key: Down, mods: Control, action: ScrollPageDown }
