@@ -196,7 +196,7 @@ type = custom/menu
 expand-right = true
 
 format-underline = ${colors.primary}
-format-spacing = 2
+format-padding = 2
 
 label-open = 
 label-open-foreground = ${colors.primary}
