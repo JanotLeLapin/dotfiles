@@ -30,8 +30,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Roboto Semibold:pixelsize=11;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-1 = Font Awesome 5 Free:pixelsize=11;1
+font-2 = Font Awesome 5 Free Solid:pixelsize=11;1
+font-3 = Font Awesome 5 Brands:pixelsize=11;1
 
 modules-left = i3
 modules-center = date
@@ -112,33 +113,26 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = ${env:DEFAULT_NETWORK_INTERFACE:wlp2s0}
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected = %essid%
+label-connected = %{A1:nm-connection-editor:}%essid%%{A}
 
-format-disconnected =
+;format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = enp7s0
 interval = 3.0
 
-# format-connected-underline = ${colors.primary}
-format-connected-prefix = " "
+;format-connected-underline = ${colors.primary}
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -167,51 +161,34 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.primary}
+format-charging = <ramp-capacity> <label-charging>
+;format-charging-underline = ${colors.primary}
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${colors.primary}
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = ${colors.primary}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-# format-underline = ${colors.primary}
-format-warn = <ramp> <label-warn>
+format = <label>
+;format-underline = ${colors.primary}
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -221,7 +198,7 @@ expand-right = true
 format-underline = ${colors.primary}
 format-spacing = 2
 
-label-open = Power
+label-open = 
 label-open-foreground = ${colors.primary}
 label-close = close
 label-close-foreground = ${colors.foreground}
