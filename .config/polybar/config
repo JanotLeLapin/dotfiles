@@ -197,6 +197,7 @@ expand-right = true
 
 format-underline = ${colors.primary}
 format-padding = 2
+format-spacing = 2
 
 label-open = 
 label-open-foreground = ${colors.primary}
