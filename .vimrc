@@ -14,6 +14,7 @@ Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'joshdick/onedark.vim'
 Plug 'hallzy/lightline-onedark'
