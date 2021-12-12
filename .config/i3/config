@@ -30,9 +30,6 @@ exec --no-startup-id redshift-gtk
 # pentablet
 exec /usr/lib/pentablet/pentablet
 
-# set wallpaper
-exec feh --bg-scale ~/Pictures/wallpaper.jpg
-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -291,3 +288,7 @@ bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 exec firefox
+
+# Animated wallpaper
+exec --no-startup-id xwinwrap -ov -g 1920x1080+0+360 -- mpv -wid WID ~/wallpaper.mp4 --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings
+exec --no-startup-id xwinwrap -ov -g 3440x1440+1920+0 -- mpv -wid WID ~/wallpaper.mp4 --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings
