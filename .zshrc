@@ -2,6 +2,7 @@ PS1="%F{cyan}%~%f %B>>>%b "
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
 
 alias ll="ls -A --color=tty"
 alias py=python
