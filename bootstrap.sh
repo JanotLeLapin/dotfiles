@@ -1,8 +1,13 @@
 #!/bin/zsh
 
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+BLUE="\033[1;33m"
+NOCOLOR="\033[0m"
+
 read "yn?This will overwrite the current configuration of the machine. Continue? [Y/n] "
 if [[ $yn != 'Y' ]]; then
-    echo 'Aborting'
+    echo "${RED}ABORTING"
     exit
 fi
 
@@ -18,9 +23,9 @@ for f in $(find . -type f ! -path "./.git/*" ! -name "bootstrap.sh" ! -name "ins
 
     # Copy
     if cmp -s "$f" "$fname"; then
-        echo "Skipped ${f:2}"
+        echo "${BLUE}SKIPPED${NOCOLOR} ${f:2}"
     else
-        echo "Copying ${f:2}"
+        echo "${GREEN}COPYING${NOCOLOR} ${f:2}"
         cp $f "$fname"
 
         if [[ "$fname" == *.sh ]]; then
@@ -35,5 +40,3 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-
-echo "Done"
