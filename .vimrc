@@ -38,8 +38,14 @@ let g:pear_tree_pairs = {
 nnoremap <C-f> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$', '\.node_modules$']
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+let g:ctrlp_custom_ignore='node_modules\|git|dist\|.next\'
 let g:ctrlp_show_hidden=1
+
+autocmd VimEnter * :bel term
+autocmd VimEnter * wincmd k
+autocmd VimEnter * 10 wincmd +
 
 colorscheme onedark
 
