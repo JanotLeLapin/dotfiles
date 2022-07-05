@@ -1,6 +1,6 @@
 -- Language server
 local lspconfig = require('lspconfig')
-local servers = { 'pyright' }
+local servers = { 'pyright', 'tsserver' }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {}
 end
