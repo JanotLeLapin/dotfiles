@@ -17,10 +17,27 @@ vim.api.nvim_set_keymap(
 
 -- theme
 vim.g.onedark_config = {
-	style = 'deep'
+    style = 'deep'
 }
 vim.g.lightline = {
-	colorscheme = 'ayu_mirage',
+    colorscheme = 'ayu_mirage',
+    active = {
+        left = {
+            {
+                'mode',
+                'paste',
+            },
+            {
+                'branch',
+                'readonly',
+                'filename',
+                'modified',
+            },
+        },
+    },
+    component_function = {
+        branch = 'FugitiveHead',
+    },
 }
 
 vim.cmd([[ colorscheme onedark ]])

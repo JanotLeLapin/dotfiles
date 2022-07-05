@@ -16,6 +16,7 @@ return require('packer').startup(function()
 
     -- git
     use 'airblade/vim-gitgutter'
+    use 'tpope/vim-fugitive'
 
     -- theme
     use 'navarasu/onedark.nvim'
