@@ -2,14 +2,6 @@
 
 Glad to hear you just acquired a new PC!
 
-## Pre Setup
-
-Please install the following packages:
-
-```sh
-git
-```
-
 ## Setup
 
 Install the following packages:
@@ -18,37 +10,39 @@ Install the following packages:
 git
 curl
 
-picom-git
-polybar
-rofi
+picom-git # compositor
+polybar # status bar
+rofi # app launcher
 redshift-git
-alacritty
-vim
-zsh
-flameshot # Screenshots
+alacritty # terminal
+neovim # text editor
+nvim-packer-git # package manager
+zsh # shell
+flameshot # screenshots
 
+# fonts
 ttf-roboto
 ttf-jetbrains-mono
 ttf-font-awesome
 
-# Arch only
 base-devel
 ```
 
 Then run the following command:
 
 ```sh
-./bootstrap.sh # Copies your dotfiles
+./bootstrap.sh # copies your dotfiles
 ```
 
 ## Post Setup
 
 ```sh
-chsh -s /bin/zsh # Sets zsh as your default shell
+chsh -s /bin/zsh # sets zsh as your default shell
 ```
 
-From a vim session:
+From Neovim:
 
 ```sh
-:PlugInstall # Installs your precious vim plugins
+:PackerSync # installs your neovim plugins
 ```
+
