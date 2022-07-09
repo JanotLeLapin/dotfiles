@@ -1,8 +1,11 @@
 -- Language server
 local lspconfig = require('lspconfig')
+local on_attach = require('mappings')
 local servers = { 'pyright', 'tsserver' }
 for _, server in ipairs(servers) do
-    lspconfig[server].setup {}
+    lspconfig[server].setup {
+        on_attach = on_attach,
+    }
 end
 
 -- Autocompletion
@@ -15,8 +18,6 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ['<c-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<c-f>'] = cmp.mapping.scroll_docs(4),
         ['<c-space>'] = cmp.mapping.complete(),
         ['<cr>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
