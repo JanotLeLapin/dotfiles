@@ -6,6 +6,8 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
 
+    use { 'mfussenegger/nvim-jdtls', ft = { 'java' } }
+
     -- format
     use 'editorconfig/editorconfig-vim'
     use 'steelsojka/pears.nvim'
