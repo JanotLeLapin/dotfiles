@@ -1,6 +1,7 @@
 vim.opt.number=true
 vim.opt.encoding='UTF-8'
 vim.opt.laststatus=2
+vim.opt_global.shortmess:remove("F")
 
 -- packer
 require('plugins')

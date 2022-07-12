@@ -34,7 +34,5 @@ local config = {
 }
 
 require('jdtls').start_or_attach(config)
-
-local on_attach = require('mappings')
-on_attach(nil, nil)
+require('mappings')(nil, nil)
 

@@ -1,7 +1,11 @@
 -- Language server
 local lspconfig = require('lspconfig')
 local on_attach = require('mappings')
-local servers = { 'pyright', 'tsserver' }
+local servers = {
+    'pyright',
+    'tsserver',
+    'metals',
+}
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
         on_attach = on_attach,
