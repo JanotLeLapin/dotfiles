@@ -16,6 +16,13 @@ vim.api.nvim_set_keymap(
     { noremap=true }
 )
 
+vim.api.nvim_set_keymap(
+    'n',
+    'ff',
+    ':Telescope find_files<cr>',
+    { noremap = true }
+)
+
 -- theme
 vim.g.onedark_config = {
     style = 'deep'

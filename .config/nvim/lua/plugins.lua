@@ -15,7 +15,7 @@ return require('packer').startup(function()
 
     -- navigation
     use 'preservim/nerdtree'
-    use 'ctrlpvim/ctrlp.vim'
+    use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
     -- git
     use 'airblade/vim-gitgutter'
