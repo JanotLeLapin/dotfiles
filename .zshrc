@@ -5,10 +5,10 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
 export JAVA_HOME=/lib/jvm/java-17-openjdk
 
-alias ll="ls -A --color=tty"
+alias l="ls -A --color=tty"
 alias py=python
 alias py2=python2
-alias vi=vim
+alias v=nvim
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
