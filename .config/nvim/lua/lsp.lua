@@ -1,14 +1,20 @@
 -- Language server
 local lspconfig = require('lspconfig')
 local on_attach = require('mappings')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 local servers = {
     'pyright',
     'tsserver',
     'metals',
+    'rust_analyzer',
+    'html',
+    'cssls',
 }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
         on_attach = on_attach,
+        capabilities = capabilities,
     }
 end
 
