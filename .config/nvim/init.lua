@@ -9,6 +9,19 @@ require('pears').setup()
 require('lsp')
 
 -- navigation
+require('telescope').setup {
+    defaults = {
+        file_ignore_patterns = {
+            -- dependencies
+            "node_modules",
+            -- build
+            "target",
+            "build",
+            "dist",
+            "bin",
+        }
+    }
+}
 vim.api.nvim_set_keymap(
     'n',
     '<c-f>',
