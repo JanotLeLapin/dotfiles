@@ -9,12 +9,17 @@ return require('packer').startup(function()
 
     use { 'mfussenegger/nvim-jdtls', ft = { 'java' } }
 
+    -- syntax
+    use 'elixir-editors/vim-elixir'
+    use 'lukas-reineke/indent-blankline.nvim'
+
     -- format
     use 'gpanders/editorconfig.nvim'
     use 'steelsojka/pears.nvim'
 
     -- navigation
-    use 'preservim/nerdtree'
+    use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+    use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
     -- git

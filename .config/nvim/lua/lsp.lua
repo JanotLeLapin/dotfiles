@@ -10,6 +10,9 @@ local servers = {
     'rust_analyzer',
     'html',
     'cssls',
+    'dockerls',
+    'svelte',
+    'astro',
 }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
@@ -17,6 +20,12 @@ for _, server in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+lspconfig.elixirls.setup {
+    cmd = { "/lib/elixir-ls/language_server.sh" },
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 -- Autocompletion
 local lspkind = require('lspkind')
