@@ -6,7 +6,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local servers = {
     'pyright',
     'tsserver',
-    'metals',
     'rust_analyzer',
     'html',
     'cssls',
@@ -23,6 +22,17 @@ end
 
 lspconfig.elixirls.setup {
     cmd = { "/lib/elixir-ls/language_server.sh" },
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+lspconfig.groovyls.setup {
+    cmd = { "java", "-jar", "/usr/share/java/groovy-language-server/groovy-language-server-all.jar" },
+    root_dir = function(fname)
+        local primary = lspconfig.util.root_pattern('settings.gradle', 'settings.gradle.kts', 'pom.xml')(fname)
+        local fallback = lspconfig.util.root_pattern('build.gradle', 'build.gradle.kts')(fname)
+        return primary or fallback
+    end,
     on_attach = on_attach,
     capabilities = capabilities,
 }
@@ -76,4 +86,21 @@ cmp.setup {
         { name = 'luasnip' },
     },
 }
+
+-- Metals
+local metals_config = require('metals').bare_config()
+metals_config.settings = {
+    showImplicitArguments = true,
+}
+metals_config.capabilities = capabilities
+metals_config.on_attach = on_attach
+
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt" },
+    callback = function()
+        require("metals").initialize_or_attach(metals_config)
+    end,
+    group = nvim_metals_group,
+})
 

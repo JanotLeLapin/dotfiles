@@ -22,7 +22,6 @@ local config = {
         '-configuration', path .. 'config_linux/',
         '-data', vim.fn.expand('~/.cache/jdtls-workspace') .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'),
     },
-    root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
     capabilities = vim.lsp.protocol.make_client_capabilities(),
     settings = {
         java = {

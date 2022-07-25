@@ -1,7 +1,7 @@
 vim.opt.number=true
 vim.opt.encoding='UTF-8'
 vim.opt.laststatus=2
-vim.opt_global.shortmess:remove("F")
+vim.opt_global.shortmess:remove("F"):append("c")
 
 local function map (action, command)
     vim.api.nvim_set_keymap('n', action, command, {
@@ -81,3 +81,4 @@ vim.g.lightline = {
 }
 
 vim.cmd([[ colorscheme onedark ]])
+

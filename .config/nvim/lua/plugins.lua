@@ -7,7 +7,8 @@ return require('packer').startup(function()
     use 'L3MON4D3/LuaSnip'
     use 'onsails/lspkind.nvim'
 
-    use { 'mfussenegger/nvim-jdtls', ft = { 'java' } }
+    use { 'mfussenegger/nvim-jdtls' }
+    use { 'scalameta/nvim-metals', requires = { 'nvim-lua/plenary.nvim' } }
 
     -- syntax
     use 'elixir-editors/vim-elixir'
