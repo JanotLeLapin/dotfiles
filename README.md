@@ -20,6 +20,7 @@ alacritty # terminal
 neovim # text editor
 nvim-packer-git # package manager
 zsh # shell
+antigen # plugin manager
 
 # fonts
 ttf-roboto
