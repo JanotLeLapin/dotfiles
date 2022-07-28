@@ -1,6 +1,6 @@
 # My Dotfiles
 
-Glad to hear you just acquired a new PC!
+My pretty dotfiles for i3wm, polybar, rofi and neovim
 
 ## Setup
 
@@ -10,6 +10,7 @@ Install the following packages:
 git
 curl
 
+i3-gaps # window manager
 picom-git # compositor
 polybar # status bar
 rofi # app launcher
@@ -18,12 +19,12 @@ alacritty # terminal
 neovim # text editor
 nvim-packer-git # package manager
 zsh # shell
-flameshot # screenshots
 
 # fonts
 ttf-roboto
 ttf-jetbrains-mono
-ttf-font-awesome
+nerd-fonts-hack
+siji-git
 
 base-devel
 ```
