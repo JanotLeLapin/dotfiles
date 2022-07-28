@@ -82,3 +82,24 @@ vim.g.lightline = {
 
 vim.cmd([[ colorscheme onedark ]])
 
+-- Discord
+require('presence'):setup {
+    auto_update = true,
+    neovim_image_text = 'VSCode', -- funny
+    main_image = 'file',
+    log_level = nil,
+    debounce_timeout = 10,
+    enable_line_number = false,
+    blacklist = {},
+    buttons = true,
+    file_assets = {},
+
+    editing_text = "Modifie %s",
+    file_explorer_text = "Navigue dans %s",
+    git_commiter_text = "Commit des modifications",
+    plugin_manager_text = "Modifie des plugins",
+    reading_text = "Inspecte %s",
+    workspace_text = "Travaille sur %s",
+    line_number_text = "Ligne %s/%s",
+}
+

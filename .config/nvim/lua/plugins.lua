@@ -31,5 +31,8 @@ return require('packer').startup(function()
     use 'navarasu/onedark.nvim'
     use 'itchyny/lightline.vim'
     use 'ryanoasis/vim-devicons'
+
+    -- misc
+    use 'andweeb/presence.nvim'
 end)
 
