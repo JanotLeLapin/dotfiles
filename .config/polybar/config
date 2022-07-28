@@ -35,7 +35,7 @@ padding-right = 4
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = Roboto:pixelsize=10:weight=medium;1
 font-1 = Hack Nerd Font:pixelsize=10;1
 font-2 = siji:pixelsize=10;1
 
@@ -51,62 +51,43 @@ tray-padding = 3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/title]
-type = internal/xwindow
-format = <label>
-label = %title%
-
-format-foreground = ${colors.foreground}
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
 
-; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-underline = ${colors.background-alt}
+label-focused-underline = ${colors.fg-7}
 label-focused-padding = 2
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 2
 
-; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 2
 
-; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.fg-7}
 label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date =
 date-alt = " %Y/%m/%d"
 
-time = %H:%M
+time = %H:%M:%S
 time-alt = %H:%M:%S
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = "  "
+format-prefix-foreground = ${colors.fg-1}
+format-underline = ${colors.fg-1}
 
-label = %date% %time%
+label = %time% %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -264,8 +245,6 @@ animation-discharging-framerate = 500
 type = custom/menu
 
 expand-right = true
-
-format-spacing = 1
 
 label-open =
 label-open-foreground = ${colors.fg-7}
