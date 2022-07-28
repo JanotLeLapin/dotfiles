@@ -15,6 +15,7 @@ picom-git # compositor
 polybar # status bar
 rofi # app launcher
 redshift-git
+pulseaudio-ctl # audio controls
 alacritty # terminal
 neovim # text editor
 nvim-packer-git # package manager
