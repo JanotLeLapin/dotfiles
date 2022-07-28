@@ -1,13 +1,9 @@
 set $mod Mod4
 
-default_border none
+default_border pixel 2
 default_floating_border none
 
 hide_edge_borders none
-
-# screenshot util
-bindsym --release Shift+Print exec flameshot gui
-bindsym --release Print       exec flameshot full
 
 font xft:URWGothic-Book 11
 
@@ -28,7 +24,7 @@ exec xset r rate 250 50
 exec --no-startup-id redshift-gtk
 
 # pentablet
-exec /usr/lib/pentablet/pentablet
+exec --no-startup-id /usr/lib/pentablet/pentablet
 
 # change focus
 bindsym $mod+j focus left
@@ -292,5 +288,3 @@ exec firefox
 # Wallpaper
 exec --no-startup-id feh --bg-scale $(find ~/Pictures -type f -name 'wallpaper.*')
 
-# Borders
-for_window [class="^.*"] border pixel 0
