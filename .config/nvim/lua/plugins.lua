@@ -29,8 +29,7 @@ return require('packer').startup(function()
 
     -- theme
     use 'navarasu/onedark.nvim'
-    use 'itchyny/lightline.vim'
-    use 'ryanoasis/vim-devicons'
+    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
 
     -- misc
     use 'andweeb/presence.nvim'

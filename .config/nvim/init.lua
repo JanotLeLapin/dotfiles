@@ -59,24 +59,9 @@ require('indent_blankline').setup {
 vim.g.onedark_config = {
     style = 'deep'
 }
-vim.g.lightline = {
-    colorscheme = 'ayu_mirage',
-    active = {
-        left = {
-            {
-                'mode',
-                'paste',
-            },
-            {
-                'branch',
-                'readonly',
-                'filename',
-                'modified',
-            },
-        },
-    },
-    component_function = {
-        branch = 'FugitiveHead',
+require('lualine').setup {
+    options = {
+        theme = 'ayu_mirage',
     },
 }
 
