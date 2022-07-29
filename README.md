@@ -9,6 +9,7 @@ Install the following packages:
 ```sh
 git
 curl
+xclip
 
 i3-gaps # window manager
 picom-git # compositor
@@ -21,6 +22,7 @@ neovim # text editor
 nvim-packer-git # package manager
 zsh # shell
 antigen # plugin manager
+maim # screenshots
 
 # fonts
 ttf-roboto

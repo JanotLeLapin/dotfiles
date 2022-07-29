@@ -275,9 +275,14 @@ mode "$mode_gaps_outer" {
 # set power-manager and volume control
 exec --no-startup-id mate-power-manager
 
+# volume
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
+
+# screenshots
+bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png; exec notify-send 'Took screenshot'
+bindsym Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
