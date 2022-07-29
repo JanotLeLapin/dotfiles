@@ -16,7 +16,7 @@ return require('packer').startup(function()
 
     -- format
     use 'gpanders/editorconfig.nvim'
-    use 'steelsojka/pears.nvim'
+    use 'windwp/nvim-autopairs'
 
     -- navigation
     use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }

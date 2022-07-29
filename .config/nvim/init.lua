@@ -12,7 +12,7 @@ end
 
 -- packer
 require('plugins')
-require('pears').setup()
+require('nvim-autopairs').setup {}
 require('lsp')
 
 -- navigation
