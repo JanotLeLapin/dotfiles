@@ -12,6 +12,7 @@ local servers = {
     'dockerls',
     'svelte',
     'astro',
+    'texlab',
 }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
