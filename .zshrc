@@ -29,6 +29,8 @@ antigen bundle rust
 
 antigen bundle zsh-users/zsh-autosuggestions
 
+antigen bundle hlissner/zsh-autopair
+
 antigen apply
 
 if [ -n "$DESKTOP_SESSION" ];then
